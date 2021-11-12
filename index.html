@@ -117,6 +117,9 @@ class: center, middle
 # Servus WebAssembly!
 .footnote[by [Auke Oosterhoff](github.com/orangetux)]
 
+???
+
+* Explain Servus, 
 
 ---
 
@@ -124,10 +127,9 @@ class: center, middle
 
 # About me
 
-github.com/orangetux
-
-auke@orangetux.nl
-
+<a href="github.com/orangetux">github.com/orangetux<a>
+<br />
+<a href="mailto:auke@orangetux.nl">auke@orangetux.nl</a>
 ---
 
 class: middle
@@ -321,6 +323,10 @@ The Wasm VM provides sandbox
 --
 * Current development primarily focuses web
 
+???
+
+* Ecosystem is focused on web
+
 ---
 
 # WebAssembly in action
@@ -334,10 +340,12 @@ The Wasm VM provides sandbox
 
 ---
 
+class: center, middle
+
 # WebAssembly in action
 
 <img src="img/servus.png" alt="Github's CoPilot plugin for neovim." width="100%" height="100%" />
-
+<a href="github.com/orangetux/servus" target="_blank">github.com/orangetux/servus</a>
 ---
 
 # WebAssembly in action
@@ -353,6 +361,11 @@ pub extern fn compress(input: Vec<u8>) -> Vec<u8> {
     return  _compress(&input);
 }
 ```
+
+???
+
+* Here we use high level type `Vec` (similar to list in PYthon)
+* wasm_bindgen generates glue code for javascript
 
 --
 
@@ -372,10 +385,14 @@ pub extern fn decompress(input: Vec<u8>) -> Vec<u8> {
     <source src="video/lz4-js-recording.mp4" />
 </video>
 
+???
+
+* Demo of a web app that provides 2 file uploads to compress and decompress file using lz4.
+
 ---
 # WebAssembly in action
 
-``` javascript
+``` line-numbers
 import * as wasm from 'servus'
 
 async function compressFile () {
@@ -397,7 +414,10 @@ document.getElementById('compress')
 
 ```
 
-<a href="localhost:8080" target="_blank">demo</a>
+???
+
+* Line 10: data is passed to the glue code
+* Glue code provide nice developer experience
 
 ---
 
@@ -541,12 +561,17 @@ def compress(data: bytes) -> bytes:
 * It will get better
 ---
 
+class: center, middle
+
 # The future of WebAssembly
 
-??? 
-* Interface Types is a proposal to get bring high level types to Wasm, reducing the glue code required.
+<img src="img/post-wasm.png" width="100%" alt="Future of Wasm">
+Picture by [Lin Clark](https://hacks.mozilla.org/2017/02/a-crash-course-in-assembly/)
+
+???
+* Interface types: adds high level types 
 * Threading
-* W
+* Wasm system interface: creating an interface to interact with host sytem.
 
 ---
 
@@ -560,7 +585,14 @@ def compress(data: bytes) -> bytes:
 7. https://mbebenita.github.io/WasmExplorer/
 8. https://rustwasm.github.io/docs/book/
 9. https://www.youtube.com/watch?v=B-ign0dW51o
+10. https://github.com/orangetux/servus
+11. https://github.com/orangetux/pygrunn-talk
 
+---
+
+class: center, middle
+
+# Danke
 
 [1]: https://webassembly.org/
 
